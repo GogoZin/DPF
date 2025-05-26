@@ -80,6 +80,8 @@ py dpf.py <GET/POST/HEAD> <host> <port> <threads> <path> <http/http2> <args>
 ```bash
 python3 dpf.py GET example.com 443 500 / http --fetch
 ```
+---
+
 ## 📜 授權條款
 
 本專案使用 [MIT License](LICENSE)。
@@ -88,11 +90,15 @@ python3 dpf.py GET example.com 443 500 / http --fetch
 
 ## ⚠️ 使用規章
 
-> ⚠️ **請勿濫用此腳本**，此工具僅供開發與安全測試用途。  
+> 📌 請注意：本工具僅供開發者學習與合法壓力測試用途。 
 >  
-> 若您將其用於非法用途，一切後果與作者無關。  
-> 下載或使用本專案即表示您同意此規章。不同意者請勿下載或使用。
+> ❌ 禁止用於任何非法活動（如 DDoS 攻擊、未經授權的網站測試）。
+> 📄 使用本工具即表示您同意以上規章與 MIT 授權條款。
+> ⚖️ 作者對於任何非法用途造成的後果概不負責。
+> 🙅 不同意規章者請勿下載或使用本工具。
 
 ---
+
+## 🌟 支持本專案
 
 感謝使用 DPF，歡迎 star ⭐ 支持！
