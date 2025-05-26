@@ -8,7 +8,7 @@
 ![image](https://github.com/GogoZin/DPF/blob/main/image.png)
 
 # ⚡ DPF - 2025年最強效能的 CC 壓測工具
-
+![License](https://img.shields.io/badge/license-MIT-green)  
 > 🛡️ **DPF**（**D**istributed **P**roxies **F**lood）是一款為 2025 年打造的 **超高速 CC ATTACK 壓力測試工具**，  
 > 通過模擬真實用戶請求，幫助你測試網站的抗壓能力。
 
