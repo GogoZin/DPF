@@ -492,13 +492,13 @@ if __name__ == '__main__':
         except Exception as e:
             print(f"Argv Error : {e}")
             sys.exit()
+        f = open('proxies.txt','w')
         if "--fetch" in sys.argv:
             s5Scraper()
-            f = open('proxies.txt','w')
-            for l in download_proxy:
-                f.write(f"{l}\n")
-            f.close()
         else:
             download_proxy = open(str(input("Enter Your Proxy List File Name : "))).readlines()
+        for l in download_proxy:
+            f.write(f"{l}\n")
+        f.close()
         launchChecker()
         launchThreads()
