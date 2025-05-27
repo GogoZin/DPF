@@ -68,7 +68,7 @@ py -m pip install -r requirements.txt
 
 ### 🐧 Linux 執行命令
 ```bash
-py dpf.py <GET/POST/HEAD> <host> <port> <threads> <path> <http/http2> <args>
+python3 dpf.py <GET/POST/HEAD> <host> <port> <threads> <path> <http/http2> <args>
 ```
 
 ### 🧊 Windows 執行命令
