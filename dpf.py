@@ -431,9 +431,9 @@ def send_requests(): #傳統HTTP FLOOD
     except ValueError:
         return
     if pps:
-        header = headerHandle()
-    else:
         header = "Connection: Keep-Alive\r\n"
+    else:
+        header = headerHandle()
     header += f'\r\n'
     while 1:
         try:
