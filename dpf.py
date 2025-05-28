@@ -312,7 +312,7 @@ def s5Scraper(): # 抓取proxy的 , 用了無數次 可以肯定的說 50~70k的
     
     git_proxy_list = [                 #Github proxies is suck, so don't use it
             "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt",
-            "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt",
+            # "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt",
             "https://raw.githubusercontent.com/mmpx12/proxy-list/refs/heads/master/socks5.txt",
             "https://raw.githubusercontent.com/zevtyardt/proxy-list/refs/heads/main/socks5.txt",
             "https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/socks5.txt",
