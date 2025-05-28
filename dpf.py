@@ -448,7 +448,7 @@ def send_requests(): #傳統HTTP FLOOD
 if __name__ == '__main__':
     if len(sys.argv) < 8:
         banner()
-        print("Usage : DPF.py <GET/POST/HEAD> <host> <port> <threads> <rpc> <path> <http/http2>")
+        print("Usage : DPF.py <GET/POST/HEAD> <host> <port> <threads> <path> <rpc> <http/http2>")
         print(" --fetch  | For fetch proxies auto")
         sys.exit()
     else:
