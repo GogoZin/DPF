@@ -195,7 +195,8 @@ def GetReferer():
         f'https://www.google.com/search?q={host}',
         f'https://www.bing.com/search?q={host}',
         f'https://tw.search.yahoo.com/search?p={host}',
-        f'https://duckduckgo.com/?t=h_&q={host}'
+        f'https://duckduckgo.com/?t=h_&q={host}',
+        f"https://www.youtube.com/results?search_query={host}"
     ]
 
     return random.choice(referers)
@@ -249,7 +250,7 @@ def headerHandle(): #封包標頭處理
     header = conn + accept + referer + useragent + x_for + cache + pri + origin
     if brute: #如果啟用brute 就最大程度減少標頭 只留關鍵標頭
         header = conn + cache + useragent
-    if cdn == 'bypass': #如果是bypass模式 那就必須加入sec
+    if cdn: #如果是bypass模式 那就必須加入sec
         header +=sec
     return header #回傳處理好的標頭
 
@@ -465,7 +466,7 @@ if __name__ == '__main__':
             if '--cdn' in sys.argv:
                 cdn = True
             p_Type = socks.SOCKS5
-            method = str(sys.argv[1])
+            method = str(sys.argv[1]).upper()
             host = str(sys.argv[2])
             port = int(sys.argv[3])
             if port == 443:
