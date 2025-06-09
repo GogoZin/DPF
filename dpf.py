@@ -243,11 +243,11 @@ def headerHandle(): #封包標頭處理
     sec += f"Sec-Ch-Ua-platform: \"Windows\"\r\n"
     sec += f"Sec-Ch-Ua-platform-version: \"19.0.0\"\r\n"
     sec += f"Sec-Ch-Ua-wow64: ?0\r\n"
-    sec += f"Sec-Fetch-Dest: empty\r\n"
-    sec += f"Sec-Fetch-Mode: cors\r\n"
+    sec += f"Sec-Fetch-Dest: document\r\n"
+    sec += f"Sec-Fetch-Mode: navigate\r\n"
     sec += f"Sec-Fetch-Site: same-origin\r\n"
-    sec += f"Sec-Gpc: 1\r\n"
     sec += f"Sec-Fetch-User: ?1\r\n"
+    sec += f"Sec-Gpc: 1\r\n"
 
     header = conn + accept + referer + useragent + x_for + cache + pri + origin + uir
     if brute: #如果啟用brute 就最大程度減少標頭 只留關鍵標頭
