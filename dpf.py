@@ -380,6 +380,7 @@ def send_rst(): #Send http2 requests with rst_stream (已失效)
                 context = ssl.create_default_context()
                 context.check_hostname = False
                 context.verify_mode = ssl.CERT_NONE
+                context.set_alpn_protocols(["h2"]) # TLS協商http2
                 s = context.wrap_socket(s, server_hostname=host)
             try:
                 config = H2Configuration(client_side=True)
