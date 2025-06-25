@@ -1,7 +1,7 @@
-# ⚡ DPF - 2025年最強效能的 CC 壓測工具
+# ⚡ DPF - The Most Powerful CC Stress Test Tool of 2025  
 ![License](https://img.shields.io/badge/license-MIT-green)  
-> 🛡️ **DPF**（**D**istributed **P**roxies **F**lood）是一款為 2025 年打造的 **超高速 CC ATTACK 壓力測試工具**，  
-> 通過模擬真實用戶請求，幫助你測試網站的抗壓能力。
+> 🛡️ **DPF** (short for **D**istributed **P**roxies **F**lood) is a **blazing fast CC ATTACK stress-testing tool** built for 2025.  
+> It mimics real user requests to help you test your website’s resistance under pressure.
 
 ---
 >            ╔╦╗┬┌─┐┌┬┐┬─┐┬┌┐ ┬ ┬┌┬┐┌─┐┌┬┐                     
@@ -12,94 +12,95 @@
 >          ╩  ┴└─└─┘┴ └─ ┴   ╚  ┴─┘└─┘└─┘─┴┘
 
 ![image](https://github.com/GogoZin/DPF/blob/main/image.png)
-## 🚀 功能特色
 
-- 🔹 **完整的請求標頭**  
- 模擬標準瀏覽器行為 + 偽造 IP，提升真實度與效果。
+## 🚀 Features
 
-- 🔹 **極速代理檢測**  
- 全網最快速、最精準的代理檢測模組，省時高效。
+- 🔹 **Fully Simulated Request Headers**  
+ Acts just like a real browser with fake IP support — super realistic and effective.
 
-- 🔹 **新手友好**  
- 簡易參數設計，小白也能快速上手壓測。
+- 🔹 **Ultra-Fast Proxy Checker**  
+ The fastest and most accurate proxy checker out there. Save time, stress less.
 
-- 🔹 **遵守主流規則**  
- 參考 Cloudflare 等主流防禦規則設計請求結構。
+- 🔹 **Beginner-Friendly**  
+ Simple commands and options. Even complete newbies can launch powerful tests quickly.
 
-- 🔹 **高穩定性**  
- 多執行緒與記憶體管理完善，**不會出現 core dumped**！
+- 🔹 **Bypass-Ready**  
+ Designed to follow major protection services like Cloudflare — helps sneak through filters.
 
-- 🔹 **擴充性強**  
- 架構模組化，未來可擴增更多攻擊模擬方式。
+- 🔹 **High Stability**  
+ Multithreaded with solid memory handling — **no core dumps here**!
 
----
-
-## 🖥️ 系統配置需求
-
-| 項目       | 建議配置        |
-|------------|-----------------|
-| 處理器     | 4 核心以上      |
-| 記憶體     | 8 GB 以上        |
-| 網路速度   | 100 Mbps 以上   |
+- 🔹 **Modular & Extendable**  
+ Easy to add more attack methods later thanks to its modular design.
 
 ---
 
-## 📦 安裝說明
+## 🖥️ System Requirements
 
-### ✅ 下載專案
+| Item         | Recommended Setup   |
+|--------------|---------------------|
+| CPU          | 4 cores or more     |
+| Memory       | 8 GB or more        |
+| Network Speed| At least 100 Mbps   |
+
+---
+
+## 📦 Installation
+
+### ✅ Clone the project
 ```bash
 git clone https://github.com/GogoZin/DPF
 cd DPF
 ```
 
-### 🐧 Linux 安裝模組
+### 🐧 Install on Linux
 ```bash
 pip3 install -r requirements.txt
 ```
 
-### 🧊 Windows 安裝模組
+### 🧊 Install on Windows
 ```bash
 py -m pip install -r requirements.txt
 ```
 
-## 🏃 使用方式
+## 🏃 How to Use
 
-### 🐧 Linux 執行命令
+### 🐧 On Linux
 ```bash
 python3 dpf.py <GET/POST/HEAD> <host> <port> <threads> <path> <http/http2> <args>
 ```
 
-### 🧊 Windows 執行命令
+### 🧊 On Windows
 ```bash
 py dpf.py <GET/POST/HEAD> <host> <port> <threads> <path> <http/http2> <args>
 ```
 
-### ✅ 範例
+### ✅ Example
 ```bash
 python3 dpf.py GET example.com 443 500 / http --fetch
 ```
 ---
 
-## 📜 授權條款
+## 📜 License
 
-本專案使用 [MIT License](LICENSE)。
+This project is licensed under the [MIT License](LICENSE)。
 
 ---
 
-## ⚠️ 使用規章
+## ⚠️ Rules & Disclaimer
 
-> 📌 請注意：本工具僅供開發者學習與合法壓力測試用途。 
+> 📌 Heads up: This tool is only for developers learning or doing legal performance testing.
 >  
-> ❌ 禁止用於任何非法活動（如 DDoS 攻擊、未經授權的網站測試）。
+> ❌ Don’t use it for any illegal activities (e.g., DDoS attacks or unauthorized testing).
 > 
-> 📄 使用本工具即表示您同意以上規章與 MIT 授權條款。
+> 📄 By using this tool, you agree to the rules above and the MIT license terms.
 > 
-> ⚖️ 作者對於任何非法用途造成的後果概不負責。
+> ⚖️ The author is not responsible for any misuse or consequences.
 > 
-> 🙅 不同意規章者請勿下載或使用本工具。
+> 🙅 If you don’t agree with the rules — don’t download or use it.
 
 ---
 
-## 🌟 支持本專案
+## 🌟 Support the Project
 
-感謝使用 DPF，歡迎 star ⭐ 支持！
+Thanks for checking out DPF! Feel free to star ⭐ this repo if you find it useful!
